@@ -9,8 +9,9 @@ OkCoin.cn : User Hammadhaleem@gmail.com / Cloud@*#09#  /0.0% fees / Less comfort
 
 # Stratergies
 * **Greedy Approach**
-   *Use the buy price for bitcoin and set a defined profit. Sell some percent whenever the 
+   **Use the buy price for bitcoin and set a defined profit. Sell some percent whenever the 
 ask value of the bitcoin rises to or more than that value.
+
 Need to work a lot on stratergies , need to read more on how real market stratergies are. 
 
 # code
