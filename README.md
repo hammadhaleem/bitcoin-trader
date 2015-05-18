@@ -27,4 +27,11 @@ pass : 19zeus92
 
 Its Sudoers account.
 
+# Links 
+
+http://www.coindesk.com/high-frequency-trading-on-the-coinbase-exchange/
+
+https://github.com/butor/blackbird
+
+https://github.com/Galts-Gulch/avarice
 
