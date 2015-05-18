@@ -1,2 +1,30 @@
-# bitcoin-trader
-Automatic bitcoin trader on Gate Coin platform. 
+# Automatic BitCoin trader
+The aim of this program is to perform bitcoin trading as a bot in a uncntrolled environment.
+
+# Login details for accounts
+
+Gatecoin.com : User RGX588 / Cloud@*#09#   0.35% fees / More comfortable GUI / less Volume
+ 
+OkCoin.cn : User Hammadhaleem@gmail.com / Cloud@*#09#  /0.0% fees / Less comfortable GUI / Unable to handle really small transcations / Largest exchange.
+
+# Stratergies
+
+Need to work a lot on stratergies , need to read more on how real market stratergies are. 
+
+# code
+
+Would be mainly written in C/C++. Making it faster.
+
+# API 
+
+API endpoints for most of the exchanges are given in the documentation, it would be a good idea to start reading them
+
+# Deployment server 
+
+demo.engineerinme.com
+user : engineer
+pass : 19zeus92
+
+Its Sudoers account.
+
+
