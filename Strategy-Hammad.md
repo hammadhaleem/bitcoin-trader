@@ -1,4 +1,4 @@
-Rather than considering trades that would resultin sudden profit, it would be better to run a algorithm that is able to acconfirmed bhieve an average profit.
+Rather than considering trades that would resultin sudden profit, it would be better to run a algorithm that is able to achieve an average profit.
 
 Following conditions can help understand what I mean here. 
 
