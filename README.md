@@ -13,10 +13,6 @@ ask value of the bitcoin rises to or more than that value.
 
 Need to work a lot on stratergies , need to read more on how real market stratergies are. 
 
-# code
-
-Would be mainly written in C/C++. Making it faster.
-
 # API 
 
 API endpoints for most of the exchanges are given in the documentation, it would be a good idea to start reading them
