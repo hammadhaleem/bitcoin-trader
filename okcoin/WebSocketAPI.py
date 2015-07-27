@@ -123,6 +123,10 @@ class OKCoinWSPrivate:
                    + "','sign':'" + sign + "','symbol':'" + self.pair
                    + "','type':'" + order + "','price':'"
                    + str(rate) + "','amount':'" + str(amount) + "'}}")
+      OKCoinWSPrivate.TradeOrderID = json.loads(
+          self.ws.recv())[-1]['data']['order_id']
+      return (OKCoinWSPrivate.TradeOrderID)
+
     except (websocket._exceptions.WebSocketTimeoutException,
             websocket._exceptions.WebSocketConnectionClosedException, ssl.SSLError,
             ConnectionResetError):
@@ -132,11 +136,17 @@ class OKCoinWSPrivate:
                    + "','sign':'" + sign + "','symbol':'" + self.pair
                    + "','type':'" + order + "','price':'"
                    + str(rate) + "','amount':'" + str(amount) + "'}}")
+      OKCoinWSPrivate.TradeOrderID = json.loads(
+          self.ws.recv())[-1]['data']['order_id']
+      return (OKCoinWSPrivate.TradeOrderID)
     try:
       OKCoinWSPrivate.TradeOrderID = json.loads(
           self.ws.recv())[-1]['data']['order_id']
+      return (OKCoinWSPrivate.TradeOrderID)
     except KeyError:
       pass  # Some error code instead (probably insufficient balance).
+
+    return "Error"
 
   # Subscribes to channel, updates on new trade. Not in use since we store
   # the order_id from trade

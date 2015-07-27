@@ -57,7 +57,7 @@ if gc.API.Exchange == 'okcoin':
       return False
 
   def Trade(order, rate, amount):
-    okwspriv.trade(order, rate, amount)
+    return okwspriv.trade(order, rate, amount)
 
   def CancelLastOrderIfExist():
     okwspriv.cancelorder(okwspriv.TradeOrderID)
