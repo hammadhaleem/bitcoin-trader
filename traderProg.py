@@ -48,11 +48,13 @@ def TradeWrapper():
 				# print(trades)
 				try:
 					if (trades[0] < 0 ):
-						print("[Buy]\t" + str(el.Trade('buy' , trades[1] , trades[0] * - 1 )))
+						el.Trade('buy' , trades[1] , trades[0] * - 1 )
+						print("\t[Buy]\t\t" + str(trades))
 					else: 
-						print("[Sell]\t" + str(el.Trade('sell' , trades[1] , trades[0]  )))
+						el.Trade('sell' , trades[1] , trades[0]  )
+						print("\t[Sell]\t\t" + str(trades))
 				except Exception as e :
-					print("[Exception]\t Exception: Unable to issue trade " + str(trades))
+					print("[Exception]\t\t Exception: Unable to issue trade " + str(trades))
 		else:
 			print ("[Skipping]\t\tStill frozen asserts")
 		time.sleep(5)

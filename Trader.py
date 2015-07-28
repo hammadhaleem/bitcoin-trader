@@ -1,7 +1,6 @@
 import asyncio
 import time
 
-import avarice
 import exchangeLayer as el
 import genconfig as gc
 import traderProg as trd

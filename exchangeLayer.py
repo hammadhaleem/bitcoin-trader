@@ -1,8 +1,6 @@
 import asyncio
 import json
 import time
-
-import avarice
 import genconfig as gc
 
 # Want to add support for a new exchange? Check docs/Contributing.md
