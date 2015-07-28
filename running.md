@@ -1,4 +1,4 @@
-websockets for OKCoin API
+#Installation Instructions, need python3 for the project.
 
 1. Using pip3:
   * pip3 install websockets
