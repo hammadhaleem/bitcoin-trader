@@ -1,3 +1,5 @@
+### [->Installation and running](https://github.com/hammadhaleem/bitcoin-trader/blob/master/Runproject.md)
+
 # Automatic BitCoin trader
 The aim of this program is to perform bitcoin trading as a bot in a uncntrolled environment.
 
