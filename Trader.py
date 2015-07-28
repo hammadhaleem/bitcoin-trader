@@ -1,12 +1,11 @@
 import asyncio
 import time
-
+import Trader 
 import exchangeLayer as el
 import genconfig as gc
 import traderProg as trd
 import Trader 
 
-# RunAll automatically if avarice is run directly
 if __name__ == '__main__':
   loop = asyncio.get_event_loop()
   

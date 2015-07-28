@@ -15,12 +15,6 @@ class API:
   secretkey = '977FB94C7A351154720B16F12F6C4883'
   AssetTradeMin = 0.01
 
-
-class Candles:
-  Verbose = True
-  Size = 15
-
-
 class Trader:
   Enabled = True
   Verbose = True
