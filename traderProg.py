@@ -48,13 +48,12 @@ def TradeWrapper():
 				# print(trades)
 				try:
 					if (trades[0] < 0 ):
-						print("Buy\t" + str(el.Trade('buy' , trades[1] , trades[0] * - 1 )))
+						print("[Buy]\t" + str(el.Trade('buy' , trades[1] , trades[0] * - 1 )))
 					else: 
-						print (trades)
-						print("Sell\t" + str(el.Trade('sell' , trades[1] , trades[0]  )))
+						print("[Sell]\t" + str(el.Trade('sell' , trades[1] , trades[0]  )))
 				except Exception as e :
-					print("\t\t\t" + str(e))
+					print("[Exception]\t Exception: Unable to issue trade " + str(trades))
 		else:
-			print ("Still frozen asserts")
+			print ("[Skipping]\t\tStill frozen asserts")
 		time.sleep(5)
 		yield from asyncio.sleep(gc.Trader.ReIssueDelay)
