@@ -71,6 +71,5 @@ def TradeWrapper():
 				print("[Info]\tFree Money :{0:10}\tFree Coin :{1:10}\tAsserts :{2:10}\tMarket price :{3::10} -Wait".format(el.GetFree('currency') , el.GetFree('asset') , val ,el.GetMarketPrice('ask')))	
 			except Exception as e :
 				pass
-		time.sleep(5)
 		
 		yield from asyncio.sleep(gc.Trader.ReIssueDelay)
