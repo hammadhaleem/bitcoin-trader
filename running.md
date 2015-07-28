@@ -20,5 +20,5 @@ websockets for OKCoin API
   * pip3 install xmpp_logging_handler
 
 
-1.python3 Trader.py 
+1. python3 Trader.py 
 
