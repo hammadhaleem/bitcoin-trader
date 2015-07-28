@@ -48,10 +48,15 @@ def TradeWrapper():
 						el.Trade('sell' , trades[1] , trades[0]  )
 				except Exception as e :
 					print("[Exception]\t Exception: Unable to issue trade for : " + str(trades))
+			try:
+				val = (float(el.GetFree('currency')) + float(el.GetFrozen('currency'))) + (float(el.GetFree('asset')) + float(el.GetFrozen('asset'))) * float(el.GetMarketPrice('ask'))
+				print("[Info]\tFree Money :{0:5}\tFree Coin :{1:5}\tAsserts :{2:5}\tMarket price :{3:5}".format(el.GetFree('currency') , el.GetFree('asset') , val ,el.GetMarketPrice('ask'))) 
+			except Exception as e :
+				pass
 		else:
 			try:
 				val = (float(el.GetFree('currency')) + float(el.GetFrozen('currency'))) + (float(el.GetFree('asset')) + float(el.GetFrozen('asset'))) * float(el.GetMarketPrice('ask'))
-				print("[Info]\tFree Money :{0:5}\tFree Coin :{1:5}\tAsserts :{2:5}\tMarket price :{3:5} ".format(el.GetFree('currency') , el.GetFree('asset') , val ,el.GetMarketPrice('ask'))) 
+				print("[Wait]\tFree Money :{0:5}\tFree Coin :{1:5}\tAsserts :{2:5}\tMarket price :{3:5}".format(el.GetFree('currency') , el.GetFree('asset') , val ,el.GetMarketPrice('ask'))) 
 			except Exception as e :
 				print ("[Skipping]\t\tStill frozen asserts\r"),
 				pass
