@@ -7,8 +7,8 @@ import traderProg
 import genconfig as gc
 import time 
 
-number_of_trades = 50
-diff = 0.002
+number_of_trades = 20
+diff = 0.0125
 
 def get_trades( sell_price , buy_price,  parts , free_money , free_coin):
 	if ( sell_price == None or buy_price == None):
@@ -57,15 +57,20 @@ def TradeWrapper():
 				except Exception as e :
 					print("[Exception]\t\t Exception: Unable to issue trade " + str(trades) + "\t" + str(e))
 				count = count - 1 
-			print("\n\n\n[Wait]\t\t\tWait before next issue")
+			
 			try:
 				val = float(el.GetFree('currency')) + float(el.GetFree('asset')) * float(el.GetMarketPrice('ask'))
-				print("[Info]\tFree Money :{0} Free Coin :{1} Asserts :{2}\n".format(el.GetFree('currency') , el.GetFree('asset') , str(val)))	
+				print("[Info]\tFree Money :{0} Free Coin :{1} Asserts :{2} Market price :{3}".format(el.GetFree('currency') , el.GetFree('asset') , str(val) , el.GetMarketPrice('ask')))
 			except Exception as e :
 				pass	
 		else:
-			print ("[Sleeping - 5 sec]\t\tStill frozen asserts")
-			time.sleep(5)
+			# print ("[Sleeping]\t\tStill frozen asserts\r"),
+			time.sleep(20)
+			try:
+				val = (float(el.GetFree('currency')) + float(el.GetFrozen('currency'))) + (float(el.GetFree('asset')) + float(el.GetFrozen('asset'))) * float(el.GetMarketPrice('ask'))
+				print("[Info-w]\tFree Money :{0} Free Coin :{1} Asserts :{2} Market price :{3}".format(el.GetFree('currency') , el.GetFree('asset') , str(val) ,el.GetMarketPrice('ask')))	
+			except Exception as e :
+				pass
 		time.sleep(5)
 		
 		yield from asyncio.sleep(gc.Trader.ReIssueDelay)
