@@ -60,7 +60,7 @@ def TradeWrapper():
 			
 			try:
 				val = float(el.GetFree('currency')) + float(el.GetFree('asset')) * float(el.GetMarketPrice('ask'))
-				print("[Info]\tFree Money :{0} Free Coin :{1} Asserts :{2} Market price :{3}".format(el.GetFree('currency') , el.GetFree('asset') , str(val) , el.GetMarketPrice('ask')))
+				print("[Info]\tFree Money :{0:10}\tFree Coin :{1:10}\tAsserts :{2:10}\tMarket price :{3::10}".format(el.GetFree('currency') , el.GetFree('asset') , val , el.GetMarketPrice('ask')))
 			except Exception as e :
 				pass	
 		else:
@@ -68,7 +68,7 @@ def TradeWrapper():
 			time.sleep(20)
 			try:
 				val = (float(el.GetFree('currency')) + float(el.GetFrozen('currency'))) + (float(el.GetFree('asset')) + float(el.GetFrozen('asset'))) * float(el.GetMarketPrice('ask'))
-				print("[Info-w]\tFree Money :{0} Free Coin :{1} Asserts :{2} Market price :{3}".format(el.GetFree('currency') , el.GetFree('asset') , str(val) ,el.GetMarketPrice('ask')))	
+				print("[Info]\tFree Money :{0:10}\tFree Coin :{1:10}\tAsserts :{2:10}\tMarket price :{3::10} -Wait".format(el.GetFree('currency') , el.GetFree('asset') , val ,el.GetMarketPrice('ask')))	
 			except Exception as e :
 				pass
 		time.sleep(5)
