@@ -39,7 +39,6 @@ class OKCoinWSPublic:
 
 class OKCoinWSPrivate:
   TradeOrderID = None
-  TradeResponse = None
 
   def __init__(self, pair, verbose, api_key='', secret=''):
     self.pair = pair
@@ -124,11 +123,6 @@ class OKCoinWSPrivate:
                    + "','sign':'" + sign + "','symbol':'" + self.pair
                    + "','type':'" + order + "','price':'"
                    + str(rate) + "','amount':'" + str(amount) + "'}}")
-      OKCoinWSPrivate.TradeResponse = json.loads(self.ws.recv())
-      OKCoinWSPrivate.TradeOrderID = OKCoinWSPrivate.TradeResponse[-1]['data']['order_id']
-      
-      return (OKCoinWSPrivate.TradeResponse)
-
     except (websocket._exceptions.WebSocketTimeoutException,
             websocket._exceptions.WebSocketConnectionClosedException, ssl.SSLError,
             ConnectionResetError):
@@ -138,19 +132,11 @@ class OKCoinWSPrivate:
                    + "','sign':'" + sign + "','symbol':'" + self.pair
                    + "','type':'" + order + "','price':'"
                    + str(rate) + "','amount':'" + str(amount) + "'}}")
-      OKCoinWSPrivate.TradeResponse = json.loads(self.ws.recv())
-      OKCoinWSPrivate.TradeOrderID = OKCoinWSPrivate.TradeResponse[-1]['data']['order_id']
-      
-      return (OKCoinWSPrivate.TradeResponse)
     try:
-      OKCoinWSPrivate.TradeResponse = json.loads(self.ws.recv())
-      OKCoinWSPrivate.TradeOrderID = OKCoinWSPrivate.TradeResponse[-1]['data']['order_id']
-      
-      return (OKCoinWSPrivate.TradeResponse)
+      OKCoinWSPrivate.TradeOrderID = json.loads(
+          self.ws.recv())[-1]['data']['order_id']
     except KeyError:
       pass  # Some error code instead (probably insufficient balance).
-
-    return "Error"
 
   # Subscribes to channel, updates on new trade. Not in use since we store
   # the order_id from trade
