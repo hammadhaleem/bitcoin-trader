@@ -7,8 +7,8 @@ import traderProg
 import genconfig as gc
 import time 
 
-number_of_trades = 10
-diff = 0.05
+number_of_trades = 50
+diff = 0.009
 
 def get_trades( sell_price , buy_price,  parts , free_money , free_coin):
 	if ( sell_price == None or buy_price == None):
