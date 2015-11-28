@@ -6,7 +6,7 @@ The aim of this program is to perform bitcoin trading as a bot in a uncntrolled 
 # Login details for accounts
 
 OkCoin.cn : 
-  User anand.inasu@live.com / xbox360  /0.0% fees / Less comfortable GUI / Unable to handle really small transcations / Largest exchange.
+  User hammadhaleem@gmail.com / Cloud@*#09#  /0.0% fees / Less comfortable GUI / Unable to handle really small transcations / Largest exchange.
 
 # Stratergies
 * **Greedy Approach** : Use the buy price for bitcoin and set a defined profit. Sell some percent whenever the 
