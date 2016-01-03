@@ -34,11 +34,15 @@ def TradeWrapper():
 			val = (float(el.GetFree('currency')) + float(el.GetFrozen('currency'))) + (float(el.GetFree('asset')) + float(el.GetFrozen('asset'))) * float(el.GetMarketPrice('ask'))
 			print("[info-wc]\tFree Money :{0:5}\tFree Coin :{1:5}\tAsserts :{2:5}\tMarket price :{3:5}".format(el.GetFree('currency') , el.GetFree('asset') , val ,el.GetMarketPrice('ask'))) 
 			count = -4
-		free_money  = el.GetFree('currency')
-		free_coin   = el.GetFree('asset')
-
-		frozen_money = el.GetFrozen('currency')
-		frozen_btc = el.GetFrozen('asset')
+		try:	
+			free_money  = el.GetFree('currency')
+			free_coin   = el.GetFree('asset')
+		
+			frozen_money = el.GetFrozen('currency')
+			frozen_btc = el.GetFrozen('asset')
+		except Exception as e:
+			
+			pass
 		avg_price= 0
 		counter = 0
 		market_price = el.GetMarketPrice('ask')
